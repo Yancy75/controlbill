@@ -249,6 +249,8 @@ body{overflow-x: hidden;}
     width: 50%;
     margin-right: 25%;
     margin-left: 25%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 /* tabla fija */
 .table-cebra{
@@ -346,6 +348,12 @@ body{overflow-x: hidden;}
   border-top: 3px solid;
   border-bottom: 3px solid;
   transition: 0.3s all;
+}
+.activomark{
+  -webkit-box-shadow:  0px 0px 16px black inset;
+  -moz-box-shadow: 0px 0px 16px black inset;
+  box-shadow: 0px 0px 16px black inset;
+  border: 3px solid black !important;
 }
 /* mas pequeños telefonos */
 @media only screen and (max-width: 500px) {
