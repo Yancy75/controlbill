@@ -232,6 +232,7 @@ body{overflow-x: hidden;}
   background-image: linear-gradient(to right, red , yellow);
   box-shadow: 1px 3px 6px black inset;
   border-radius: 3px;
+  margin-bottom: 5px;
 }
 .mactivo{
     box-shadow: 0px 0px 6px black inset;
@@ -249,6 +250,8 @@ body{overflow-x: hidden;}
     width: 50%;
     margin-right: 25%;
     margin-left: 25%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 /* tabla fija */
 .table-cebra{
@@ -347,15 +350,68 @@ body{overflow-x: hidden;}
   border-bottom: 3px solid;
   transition: 0.3s all;
 }
+.activomark{
+  -webkit-box-shadow:  0px 0px 16px black inset;
+  -moz-box-shadow: 0px 0px 16px black inset;
+  box-shadow: 0px 0px 16px black inset;
+  border: 3px solid black !important;
+}
+
+.panel_toolbox>li>a:hover {
+  background: transparent !important;
+}
+.control-label{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.barraboto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.panel-body{
+  overflow-x: auto;
+  cursor: pointer;
+}
+/*scroll horizontal*/
+.panel-body::-webkit-scrollbar {
+    width: 10px;
+    height: 7px;
+  }
+.panel-body::-webkit-scrollbar-track  {
+  background-image: linear-gradient(to right, #9cba00, rgb(176 114 56), #cfd98d);
+  -webkit-box-shadow: inset 0 0 5px grey; 
+  -moz-box-shadow: inset 0 0 5px grey; 
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;}  
+.panel-body::-webkit-scrollbar-thumb {background: rgba(0,0,0,0.1);border-radius: 5px;}
+.panel-body::-webkit-scrollbar-thumb:hover {background: rgba(0,0,0,0.4);}
+/* scroll para firefox */
+    .scroller {
+      scrollbar-color: #0003 #cfda8d;
+      scrollbar-width: thin;
+      cursor: pointer;
+    }
+ /* fin de scroll firefox */   
+ /*fin de scroll horizontal*/
+
 /* mas pequeños telefonos */
 @media only screen and (max-width: 500px) {
     .goldenlog1{ height:30px;}
 }
 @media only screen and (max-width: 600px) {
    .esp1 {left: 60px;}
-   .x_panelt{font-size: 0.9em;}
    .th3ex{font-size: 1.5rem;}
    .goldenlog{ height:55px;}
+
+   .x_panel{font-size: 0.9em;}
+   .table td, .table th {padding: .25rem;}
+   .x_panel > .row > .col-sm-12 > .container-fluid > .row > .col-sm-6{ width: 50%; } 
+   input[type=search]{    
+    padding: 0.2rem 0.4rem;
+    width: 80% !important;
+  }
+  .by{min-width: 80px;    font-size: 1em;}
 }
 /* pantalla pequeña */
 @media only screen and (min-width: 501px) {
@@ -364,30 +420,44 @@ body{overflow-x: hidden;}
 @media only screen and (min-width: 571px) {
     .goldenlog1{ height:50px;}
 }
+
 @media only screen and (min-width: 600px) {
     .esp1 {left: 250px;}
-   .x_panelt{font-size: 1em;}
+   .x_panel{font-size: 1em;}
    .goldenlog{ height:55px;}
    .goldenlog1{ height:55px;}
 }
+/* compuesto especial */
 @media only screen and (min-width: 698px) {
    .goldenlog{ height:60px;}
    .goldenlog1{ height:60px;}
 }
+/* compuesto especial */
+
 /* dispositivos medios  */
 @media only screen and (min-width: 768px) {
   .esp1 {left: 340px;}
-  .x_panelt{font-size: 1.2em;}
+  .x_panel{font-size: 1.2em;}
 }
 
 /* grandes */
-@media only screen and (min-width: 992px) {
-  .x_panelt{font-size: 1.3em;}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .x_panel{font-size: 1.3em;}
   h1 {font-size: 80px;}
+  .table td, .table th {padding: .25rem;}
+  .by{    min-width: 90px;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    padding: .325rem .6rem;}
 }
 
 /* final extra  largo */
 @media only screen and (min-width: 1200px) {
-  .x_panelt{font-size: 1.4em;}
+  .table td, .table th {padding: .75rem;}
+  .x_panel{font-size: 1.4em;}
   h1 {font-size: 90px;}
+}
+/*datos primarios*/
+.dataTables_length{
+  float: left;
 }

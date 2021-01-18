@@ -10,6 +10,9 @@
 @endsection
 
 @section('content')
+<style>
+ .x_panel{margin-bottom: 0px;}
+ </style>
     <div class="">
         <div class="clearfix"></div>
         <div class="row" style="justify-content: center;">
@@ -17,14 +20,14 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"></div>
 
-                    <div class="panel-body">
+                    <div class="panel-body scroller">
                         <div class="centar_horizontal">
-                            <h3 class="th3"><span class="th3ex">User List</span></h3>
+                            <h3 class="th3"><span class="th3ex">User List dale</span></h3>
                         </div>
                         @if(empty($info))
                             <h4>There is no user registed</h4>
                         @else
-                          <div class="x_panel">
+                          <div class="x_panel "  style="min-width: 570px;"> 
                         <div class="x_title">
                        <h2><i class="fa fa-user"></i> User <small> List</small></h2>
                           <div class="nav navbar-right" style="width: auto; justify-content: flex-end;">

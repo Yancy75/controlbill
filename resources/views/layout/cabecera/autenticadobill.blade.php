@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col meto1">
     <div class="scroll-view ">
       <div class="navbar nav_title" style="border: 0;">
-        <a href="{{ url('/') }}" class="site_title logo"><img src="{{ asset('images/Goldenicon.png') }}" class="logoy"><span> ControlBill! UNO</span></a>
+        <a href="{{ url('/') }}" class="site_title logo"><img src="{{ asset('images/Goldenicon.png') }}" class="logoy"><span> Supermarket Integrity 1.0</span></a>
       </div>
       <div class="clearfix"></div>
       <br>

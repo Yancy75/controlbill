@@ -7,19 +7,22 @@
 @section('content')
     <div class="">
           <div class="clearfix"></div>
-        <div class="row">
-            <div class="col-md-11 col-md-offset-2">
+       <!-- <div class="row">
+            <div class="col-md-11 col-md-offset-2">-->
+
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="centar_horizontal">
-                            <h3 class="th3">Modify {{$user['name']}} </h3>
+                            <h3 class="th3"><span class="th3ex">Modify {{$user['name']}}</span> </h3>
                               </div>
-                      <div class="row">
-                        <div class="col-sm-8 offset-md-2">
+                      <div class="row" style="justify-content: center;">
+                        <div class="col-11 col-sm-10 col-md-8 col-lg-7">
                          <div class="x_panel">
                            <div class="x_title">
-                             <h2><i class="fa fa-user"></i> Modify <small> Users</small></h2>
-                             <ul class="nav navbar-right panel_toolbox"><li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li></ul>
+                             <h2><i class="fa fa-user"></i> Modify Users</h2>
+                             <ul class="nav navbar-right panel_toolbox">
+                             <li><a href="{{ route('user_list') }}" ><span class="btn btn-primary by" style="color:white;"><i class="fa fa-sign-out" aria-hidden="true"></i> Back</span></a><li>
+                               <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li></ul>
                              <div class="clearfix"></div>
                            </div>
                            <div class="x_content">
@@ -86,13 +89,15 @@
                                   </div>
                                 </div>
                                 <hr/>
-                                <div class="float-left resaltado">
+                                <div class="barraboto">
+                                <div class="resaltado">
                                     <a href="{{ route('password_user', ['id' => $user['id']]) }}" class="btn btn-success btn-lg by"><i class="fa fa-lock"></i> Password</a>
                                 </div>
-                                <div class="float-right">
+                                <div class="">
                                     <a href="{{ route('user_list') }}" class="btn btn-danger by"><i class="fa fa-close"></i> Cancel</a>
                                     <button type="submit" class="btn btn-primary by"><i class="fa fa-edit"></i> Modify</button>
                                 </div>
+                               </div>
                                 <div class="clear"></div>
                             </form>
                           </div>
@@ -112,8 +117,8 @@
                             </div>
                     </div>
                 </div>
-            </div>
-        </div>
+           <!-- </div>-->
+       <!-- </div> -->
     </div>
 @endsection
 
