@@ -5,6 +5,10 @@
 @endsection
 
 @section('content')
+<style>
+.right{background: white;}
+.form-control{padding-right: 2.5em;}
+</style>
     <div class="">
         <div class="clearfix"></div>
         <div class="row">
@@ -18,7 +22,7 @@
                           <div class="col-sm-8 offset-md-2">
                            <div class="x_panel">
                              <div class="x_title">
-                               <h2><i class="fa fa-shopping-cart"></i> General <small> Supermarket</small></h2>
+                               <h2><i class="fa fa-shopping-cart"></i> General Supermarket</h2>
                                <ul class="nav navbar-right panel_toolbox"><li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li></ul>
                                <div class="clearfix"></div>
                              </div>
@@ -30,7 +34,7 @@
                                 <div class="form-group row">
                                     <label  class="control-label col-md-2 col-sm-2" for="inputRegularHours">Regular Hours:</label>
                                       <div class="col-md-10 col-sm-10 ">
-                                    <input type="text" class="form-control" required id="inputRegularHours" name="inputRegularHours" value="@php
+                                    <input type="number" class="form-control" required id="inputRegularHours" name="inputRegularHours" value="@php
                                         if(!empty($info))
                                         {
                                             echo $info[0]['regular_hours'];
@@ -44,7 +48,7 @@
                                 <div class="form-group row">
                                     <label class="control-label col-md-2 col-sm-2" for="inputPTO">PTO:</label>
                                         <div class="col-md-10 col-sm-10 ">
-                                    <input type="text" class="form-control" id="inputPTO" name="inputPTO" value="@php
+                                    <input type="number" class="form-control" id="inputPTO" name="inputPTO" value="@php
                                         if(!empty($info))
                                         {
                                             echo $info[0]['pto_hours'];
@@ -56,7 +60,7 @@
                                   <div class="form-group row">
                                     <label class="control-label col-md-2 col-sm-2" for="inputPOverHour">Porcentage over hours:</label>
                                        <div class="col-md-10 col-sm-10 ">
-                                    <input type="text" class="form-control" id="inputPOverHour" name="inputPOverHour" value="@php
+                                    <input type="number" class="form-control" id="inputPOverHour" name="inputPOverHour" value="@php
                                         if(!empty($info))
                                         {
                                             echo $info[0]['porcentage'];

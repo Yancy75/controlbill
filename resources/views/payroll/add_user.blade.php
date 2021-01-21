@@ -18,8 +18,10 @@
                       <div class="centar_horizontal">
                           <h3 class="th3"><span class="th3ex">Supermarket Information</span></h3>
                          </div>
+
                          <div class="row" style="justify-content: center;">
                            <div class="col-11 col-sm-10 col-md-8 col-lg-7">
+
                             <div class="x_panel">
                               <div class="x_title">
                                 <h2><i class="fa fa-user"></i> Add Users</h2>

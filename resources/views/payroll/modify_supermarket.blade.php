@@ -5,18 +5,27 @@
     @endsection
 
 @section('content')
+<style>
+.right{background: white;}
+.form-control{padding-right: 2.5em;}
+</style>
     <div class="">
         <div class="clearfix"></div>
-        <div class="row" style="justify-content: center;">
-            <div class="col-md-8 col-sm-8 ">
-                <div class="panel panel-default">
-                    <div class="panel-heading"></div>
+
+                <div class="panel panel-default" style="padding-top:5em;">
+                    <div class="panel-body">
+
                         <div class="centar_horizontal">
-                              <h3 class="th3">Modify supermarket Crescent </h3>
+                              <h3 class="th3"><span class="th3ex">Modify supermarket Crescent</span></h3>
+                            </div>
+                            <div class="row" style="justify-content: center;">
+                              <div class="col-11 col-sm-10 col-md-9 col-lg-8">
+
                           <div class="x_panel">
                             <div class="x_title">
-                              <h2><i class="fa fa-shopping-cart"></i> Modify supermarket <small>Crescent</small></h2>
+                              <h2><i class="fa fa-shopping-cart"></i> Modify supermarket</h2>
                               <ul class="nav navbar-right panel_toolbox">
+                                    <li><a href="{{ route('supermarket_list') }}" ><span class="btn btn-primary by" style="color:white;"><i class="fa fa-sign-out" aria-hidden="true"></i> Back</span></a><li>
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
                               </ul>
@@ -86,8 +95,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-       </div>
+              </div>
+          </div>
     </div>
 @endsection
 

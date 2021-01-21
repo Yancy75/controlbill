@@ -7,8 +7,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+      <link rel="icon" href="{{ asset('images/Goldeniconm.png') }}" type="image/ico" />
 
-    <title>{{ config('app.name', 'Payroll Module') }}</title>
+    <!--<title>{{ config('app.name', 'Payroll Module') }}</title>-->
+      <title>Golden Farms</title>
 
     <link href="{{ asset('vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 {{--    <link href="{{ asset('vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">--}}

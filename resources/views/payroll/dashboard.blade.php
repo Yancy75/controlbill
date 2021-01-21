@@ -37,7 +37,11 @@
                                 @foreach($info as $inf)
                                     <div class="animated flipInY marco " data-toggle="tooltip" data-placement="bottom" title="{{ $inf['name'] }}">
                                         <a href="{{ route('select_supermarket', ['id' => $inf['id']]) }}" >
-                                            <div class="tile-stats by">
+                                              @if($inf['supermarket_id'] == session()->get('supermarket_id'))
+                                                 <div class="tile-stats by activomark">
+                                                @else
+                                                  <div class="tile-stats by">
+                                                @endif
                                               <div class="tile1">
                                                 <div class="count">{{ $inf['name'] }}</div>
                                                 <div class="tile2"><i class="fa fa-shopping-cart"></i></div>

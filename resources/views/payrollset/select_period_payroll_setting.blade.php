@@ -78,12 +78,12 @@
                                   <ul class="nav navbar-right panel_toolbox"><li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li></ul>
                                   <div class="clearfix"></div>
                               </div>
-                              <div class="x_content">
+                              <div class="x_content selecblo">
                                   <br>
                                   @if($payroll->isNotEmpty())
                                       <ul>
                                           @foreach($payroll as $p)
-                                              <li><a href="javascript:void(0);" onclick="buscarPeriodoByClick('{{ $p->period_starting }}');">{{ $p->period_starting }}</a></li>
+                                              <li><a href="javascript:void(0);" onclick="buscarPeriodoByClick('{{ $p->period_starting }}');"><i class="fa fa-calendar"></i> {{ $p->period_starting }}</a></li>
                                           @endforeach
                                       </ul>
                                   @endif
@@ -96,7 +96,7 @@
                           <div class="alert alert-danger">
                               <ul>
                                   @foreach ($errors->all() as $error)
-                                      <li>{{ $error }}</li>
+                                      <li> {{ $error }}</li>
                                   @endforeach
                               </ul>
                           </div>

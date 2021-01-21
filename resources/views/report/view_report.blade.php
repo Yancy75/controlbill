@@ -105,8 +105,8 @@
     <script src="{{ asset('js/report_store.js') }}"></script>
     <script>
         $( function() {
-            $('#inputDate').datepicker({ uiLibrary: 'bootstrap4' });
-            $('#inputDatef').datepicker({ uiLibrary: 'bootstrap4' });
+            $('#inputDate').datepicker({ uiLibrary: 'bootstrap4', maxDate: function() {return $('#inputDatef').val();} });
+            $('#inputDatef').datepicker({ uiLibrary: 'bootstrap4', minDate: function() {return $('#inputDate').val();} });
         });
         validarFechaBuscarReporte();
     </script>

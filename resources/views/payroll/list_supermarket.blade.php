@@ -18,15 +18,15 @@
                     <div class="panel-heading"></div>
 
                     <div class="panel-body">
-                        <div class="centar_horizontal"><h3 class="th3"> Supermarket List</h3></div>
+                        <div class="centar_horizontal"><h3 class="th3"><span class="th3ex"> Supermarket List </span></h3></div>
                            @if(empty($info))
                                <h4>There is no supermarket registed</h4>
                             @else
-                            <div class="x_panel">
+                            <div class="x_panel x_panel1 scroller">
                               <div class="x_title">
-                             <h2><i class="fa fa-shopping-cart"></i> Supermarket <small>table</small></h2>
+                             <h2><i class="fa fa-shopping-cart"></i> Supermarket table </h2>
                                 <div class="nav navbar-right" style="width: auto; justify-content: flex-end;">
-                                  <a href="{{ route('add_supermarket') }}" class="btn btn-primary by"><i class="fa fa-save"></i> Add Supermarket</a>
+                                  <a href="{{ route('add_supermarket') }}" class="btn btn-primary by by1"><i class="fa fa-save"></i> Add Supermarket</a>
                                 </div>
                                  <div class="clearfix"></div>
                                 </div>
@@ -47,7 +47,7 @@
                                         <td>{{ $inf['name'] }}</td>
                                         <td>{{ $inf['address'] }}</td>
                                         <td>{{ $inf['status'] }}</td>
-                                        <td><a href="{{ route('modify_super', ['id' => $inf['id']]) }}" class="btn btn-primary by"><i class="fa fa-edit"></i> Modify</a></td>
+                                        <td><a href="{{ route('modify_super', ['id' => $inf['id']]) }}" class="btn btn-primary by by1"><i class="fa fa-edit"></i> Modify</a></td>
                                     @endforeach
                                     </tbody>
                                  </table>
