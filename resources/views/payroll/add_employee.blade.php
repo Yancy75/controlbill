@@ -18,10 +18,14 @@
             color: white !important;
             text-shadow: 1px 1px 2px black;
         }
+        .right{background: white;}
+        .form-control{padding-right: 2.5em;}
+        .th3ex{line-height: 3rem;}
     </style>
 @endsection
 
 @section('content')
+
     <div class="">
         <div class="row">
             <div class="clearfix"></div>
@@ -29,13 +33,13 @@
                 <div class="panel panel-default">
                       <div class="panel-body">
                               <div class="centar_horizontal">
-                                <h3 class="th3">Employee Information of the supermarket {{ $supermarket['name'] }}</h3>
+                                <h3 class="th3"><span class="th3ex">Employee Information of the supermarket {{ $supermarket['name'] }}</span></h3>
                               </div>
                               <div class="row">
                                 <div class="col-sm-8 offset-md-2">
                                  <div class="x_panel">
                                    <div class="x_title">
-                                     <h2><i class="fa fa-user"></i> Add <small> Employee</small></h2>
+                                     <h2><i class="fa fa-user"></i> Add Employee</h2>
                                      <ul class="nav navbar-right panel_toolbox"><li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li></ul>
                                      <div class="clearfix"></div>
                                    </div>

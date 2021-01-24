@@ -5,6 +5,10 @@
 @endsection
 
 @section('content')
+<style>
+.right{background: white;}
+.form-control{padding-right: 2.5em;}
+</style>
     <div class="">
         <div class="clearfix"></div>
         <div class="row">
@@ -13,12 +17,12 @@
                     <div class="panel-heading"></div>
 
                     <div class="panel-body">
-                        <div class="centar_horizontal"><h3 class="th3">{{$supermarket['name']}} - Add Sale</h3>  </div>
-                        <div class="row">
-                            <div class="col-sm-8 offset-md-2">
+                        <div class="centar_horizontal"><h3 class="th3"><span class="th3ex">{{$supermarket['name']}} - Add Sale</span></h3></div>
+                        <div class="row  justify-content-center">
+                            <div class="col-sm-10 col-md-8">
                                 <div class="x_panel">
                                     <div class="x_title">
-                                        <h2><i class="fa fa-shopping-cart"></i> Sale <small> Supermarket</small></h2>
+                                        <h2><i class="fa fa-shopping-cart"></i> Sale Supermarket</h2>
                                         <ul class="nav navbar-right panel_toolbox"><li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li></ul>
                                         <div class="clearfix"></div>
                                     </div>
@@ -28,23 +32,22 @@
                                             @csrf
                                             <input type="hidden" id="inputIdSupermarket" name="inputIdSupermarket" value="{{$supermarket['id']}}">
                                             <div class="form-group row">
-                                                <label  class="control-label col-md-2 col-sm-2" for="inputDate">Date:</label>
-                                                <div class="col-md-10 col-sm-10 ">
+                                                <label  class="control-label col-md-2 col-sm-4" for="inputDate">Date:</label>
+                                                <div class="col-10 col-md-10 col-sm-8 ">
                                                     <input type="text" class="form-control" required id="inputDate" name="inputDate" value="" autocomplete="off">
-                                                    <span class="fa fa-clock-o form-control-feedback right" aria-hidden="true"></span>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="control-label col-md-2 col-sm-2" for="inputAmount">Amount:</label>
-                                                <div class="col-md-10 col-sm-10 ">
+                                                <label class="control-label col-md-2 col-sm-4" for="inputAmount">Amount:</label>
+                                                <div class="col-10 col-md-10 col-sm-8 ">
                                                     <input type="number" class="form-control" id="inputAmount" name="inputAmount" step="0.01" value="" required>
                                                     <span class="fa fa-bar-chart form-control-feedback right" aria-hidden="true"></span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="control-label col-md-2 col-sm-2" for="inputDepartment">Department:</label>
-                                                <div class="col-md-10 col-sm-10 ">
+                                                <label class="control-label col-md-2 col-sm-4" for="inputDepartment">Department:</label>
+                                                <div class="col-10 col-md-10 col-sm-8 ">
                                                     <select class="form-control" id="inputDepartment" name="inputDepartment">
                                                         @foreach($info as $inf)
                                                             <option value="{{$inf->id}}">{{$inf->name}}</option>

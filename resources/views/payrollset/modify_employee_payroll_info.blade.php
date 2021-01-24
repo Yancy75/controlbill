@@ -6,15 +6,20 @@
 @endsection
 
 @section('content')
+<style>
+  .th3ex{line-height: 4rem;}
+  .right{background: white;}
+  .form-control{padding-right: 2.5em;}
+</style>
     <div class="">
         <div class="clearfix"></div>
         <div class="row" style="justify-content: center;">
-              <div class="col-md-8 col-sm-8 ">
+              <div class="col-md-9 col-sm-10">
                 <div class="panel panel-default">
                     <div class="panel-heading"></div>
                     <div class="panel-body">
                             <div class="centar_horizontal">
-                                <h2 class="th2">{{ $supermarket['name'] }} supermarket</h2>
+                                <h2 class="th2"><span class="th3ex">{{ $supermarket['name'] }} supermarket</span></h2>
                                 <h5 class="th5">{{ $supermarket['address'] }}</h5>
                                 <hr/>
                                 <h5 class="th5">MODIFY PAYROLL INFORMATION OF {{ $info[0]['name'] }} {{ $info[0]['last_name'] }}</h5>

@@ -15,7 +15,7 @@
 
                     <div class="panel-body">
                         <div class="centar_horizontal">
-                            <h3 class="th3">Report - Department from {{ $super['name'] }}</h3>
+                            <h3 class="th3"><span class="th3ex">Report - Department from {{ $super['name'] }}</span></h3>
                         </div>
 
                         <div class=" x_panel">

@@ -22,13 +22,17 @@
 @endsection
 
 @section('content')
+<style>
+.right{background: white;}
+.form-control{padding-right: 2.5em;}
+</style>
     <div class="">
         <div class="clearfix"></div>
         <div class="row">
             <div class="col-md-11 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="centar_horizontal"><h3 class="th3">Select period for the report of {{ $supermarket['name'] }}</h3></div>
+                        <div class="centar_horizontal"><h3 class="th3"><span class="th3ex">Select period for the report of {{ $supermarket['name'] }}</span></h3></div>
                         <div class="col-sm-6 offset-md-3">
                             <div class="x_panel">
                                 <div class="x_title">
@@ -76,7 +80,7 @@
                         </div>
                         <div class="clear"></div>
                         @if($info)
-                            <div id="reporte_general_id" class="x_panel">
+                            <div id="reporte_general_id" class="x_panel x_panel selecblo">
                                 Report to {{$datei}} until {{$datef}}
                                 <br/>
                                 Total Payroll: {{ $payroll['total'] }}

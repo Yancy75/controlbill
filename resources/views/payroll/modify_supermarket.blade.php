@@ -25,7 +25,7 @@
                             <div class="x_title">
                               <h2><i class="fa fa-shopping-cart"></i> Modify supermarket</h2>
                               <ul class="nav navbar-right panel_toolbox">
-                                    <li><a href="{{ route('supermarket_list') }}" ><span class="btn btn-primary by" style="color:white;"><i class="fa fa-sign-out" aria-hidden="true"></i> Back</span></a><li>
+                                    <li><a href="{{ route('supermarket_list') }}" ><span class="btn btn-dark  by" style="color:white;"><i class="fa fa-undo" aria-hidden="true"></i> Back</span></a><li>
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
                               </ul>

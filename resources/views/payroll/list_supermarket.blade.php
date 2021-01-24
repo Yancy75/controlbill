@@ -13,7 +13,7 @@
     <div class="">
         <div class="clearfix"></div>
         <div class="row" style="justify-content: center;">
-            <div class="col-md-11 col-md-offset-2">
+            <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading"></div>
 

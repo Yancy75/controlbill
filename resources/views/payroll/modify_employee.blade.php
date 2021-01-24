@@ -18,6 +18,8 @@
             color: white !important;
             text-shadow: 1px 1px 2px black;
         }
+        .right{background: white;}
+        .form-control{padding-right: 2.5em;}
     </style>
 @endsection
 
@@ -29,13 +31,13 @@
                 <div class="panel panel-default">
                       <div class="panel-body">
                         <div class="centar_horizontal">
-                          <h3 class="th3">Modify Employee {{$employee['name']}} {{ $employee['last_name'] }}</h3>
+                          <h3 class="th3"><span class="th3ex">Modify Employee {{$employee['name']}} {{ $employee['last_name'] }}</span></h3>
                         </div>
                           <div class="row">
                               <div class="col-sm-8 offset-md-2">
-                               <div class="x_panel">
+                               <div class="x_panel x_panel1 scroller">
                                  <div class="x_title">
-                                   <h2><i class="fa fa-user"></i> Modify<small> Employee</small></h2>
+                                   <h2><i class="fa fa-user"></i> Modify Employee</h2>
                                      <div class="float-right">
                                          @if($view_modify == 'v')
                                             <a href="{{ route('employee_payroll_setting', ['id' => $employee['id'], 'view_modify' => 'v']) }}" class="btn btn-success by"><i class="fa fa-money"></i> Payroll setting</a>
@@ -315,7 +317,7 @@
 
                                 @if($view_modify == 'm')
                                     <div>
-                                        <button id="mostrarEndDateId" type="button" class="btn btn-warning by" onclick="mostrarEndDate();">Termination Employee</button>
+                                        <button id="mostrarEndDateId" type="button" class="btn btn-warning by" onclick="mostrarEndDate();" style="margin-bottom: 1em;">Termination Employee</button>
                                     </div>
                                 @endif
 
@@ -426,7 +428,7 @@
                                         <a href="{{ route('employees_list', ['id_supermarket' => $employee['supermarket_id']]) }}" class="btn btn-danger by"><i class="fa fa-close"></i> Cancel</a>
                                         <button type="submit" class="btn btn-primary by"><i class="fa fa-edit"></i> Save</button>
                                     @elseif($view_modify == 'v')
-                                        <a href="{{ route('employees_list', ['id_supermarket' => $employee['supermarket_id']]) }}" class="btn btn-secondary by"><i class="fa fa-arrow-left"></i> Back</a>
+                                        <a href="{{ route('employees_list', ['id_supermarket' => $employee['supermarket_id']]) }}" class="btn btn-dark  by"><i class="fa fa-undo" aria-hidden="true"></i> Back</a>
                                     @endif
                                 </div>
                                 <div class="clear"></div>

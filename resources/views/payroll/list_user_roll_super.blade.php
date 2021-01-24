@@ -9,26 +9,32 @@
 @endsection
 
 @section('content')
+<style>
+.th3ex{line-height: 3rem;}
+.row{justify-content: center;}
+.x_panel{max-width: 960px;}
+.ceo{justify-content: center; display: flex;}
+</style>
     <div class="">
         <div class="clearfix"></div>
         <div class="row">
-            <div class="col-md-11 col-md-offset-2">
+            <div class="col-11">
                 <div class="panel panel-default">
                     <div class="panel-heading"></div>
 
                     <div class="panel-body">
                         <div class="centar_horizontal">
-                            <h3  class="th3">{{ $supermarket['name'] }} Supermarket Roll User</h3>
+                            <h3  class="th3"><span class="th3ex">{{ $supermarket['name'] }} Supermarket Roll User</span></h3>
                         </div>
                         @if(empty($info))
                             <h4>There is no user registed</h4>
                         @else
 
                           <div class="row">
-                            <div class="col-sm-8 offset-md-2">
-                              <div class="x_panel">
+                            <div class="col-md-12 ceo">
+                              <div class="x_panel x_panel1 scroller">
                                  <div class="x_title">
-                                 <h2><i class="fa fa-shopping-cart"></i> Roll <small><i class="fa fa-user"></i> User</small></h2>
+                                 <h2><i class="fa fa-shopping-cart"></i> Roll <i class="fa fa-user"></i> User</h2>
                                     <div class="clearfix"></div>
                                   </div>
                                 <table id="supermarket_list_id" class="table table-striped table-bordered" style="width:100%">
@@ -45,9 +51,9 @@
                                             <td>{{ $inf['name'] }}</td>
                                             <td>{{ $inf['level'] }}</td>
                                             @if($inf['roll_id'] == 0)
-                                                <td><a href="{{ route('roll_in', ['user_id' => $inf['user_id'], 'supermarket_id' => $inf['supermarket_id']]) }}" class="btn btn-primary by">Roll In</a></td>
+                                                <td><a href="{{ route('roll_in', ['user_id' => $inf['user_id'], 'supermarket_id' => $inf['supermarket_id']]) }}" class="btn btn-primary by by1">Roll In</a></td>
                                             @else
-                                                <td><a href="{{ route('roll_out', ['id' => $inf['roll_id']]) }}" class="btn btn-danger by">Roll Out</a></td>
+                                                <td><a href="{{ route('roll_out', ['id' => $inf['roll_id']]) }}" class="btn btn-danger by by1">Roll Out</a></td>
                                             @endif
                                         </tr>
                                     @endforeach

@@ -4,13 +4,15 @@
     <style>
        body{overflow: auto !important;}
        .x_title{padding: 10px 17px;}
-       .card-body{padding: 0;}
+       .card-body{padding: 0; overflow-x: inherit;}
        .x_panel{margin-bottom: 10px;}
        h4{text-align: start; padding: 5px; margin-bottom: 1px;}
        .tda{background: white; color: black;}
        .tdb{box-shadow: 0px 0px 3px black inset; background: white;}
        .diva{padding-left: 10px; padding-right: 10px; font-size: 1.5em;}
-      .ip{    color: white;   font-weight: 900;  text-shadow: 1px 1px 2px black;}
+      .ip{ color: white;   font-weight: 900;  text-shadow: 1px 1px 2px black;}
+      .th3ex{line-height: 4rem;}
+      .tesp{width: 100%; box-shadow: 2px 2px 6px black; border-collapse: separate; border-spacing: 10; border: solid black 1px; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;}
     </style>
 @endsection
 
@@ -24,9 +26,9 @@
                     <div class="panel-body">
                         <div>
                             <div class="centar_horizontal">
-                                <h2 class="th2">{{ $supermarket['name'] }} supermarket</h2>
+                                <h2 class="th2"><span class="th3ex">{{ $supermarket['name'] }} supermarket</span></h2>
                                 <h5 class="th5">{{ $supermarket['address'] }}</h5>
-                                <h5 class="th5"><i class="fa fa-list-alt"></i> PAYROLL REPORT</h5>
+                                <h5 class="th5"><i class="fa fa-list-alt"></i> PAYROLL REPORT </h5>
                                 <a class="btn btn-primary by" href="{{ route('view_payroll_info_without_menu', ['date' => $date_begin] ) }}" target="_blank"><i class="fa fa-print"></i> Print/View Report</a>
                                 <a class="btn btn-success by" href="{{ route('view_payroll_info_without_menu_double', ['date' => $date_begin] ) }}" target="_blank"><i class="fa fa-print"></i> Employee Pay Stub Print/View Report</a>
                                 <a class="btn btn-warning by" href="{{ route('add_individual_employee', ['date' => $date_begin] ) }}"><i class="fa fa-plus"></i> Add Employee</a>
@@ -49,7 +51,7 @@
                                     @php($c=0)
                                     @foreach($payrollSetByEmployee as $dep)
                                         @if($dep['employee_info']->isNotEmpty())
-                                            <div class="x_panel" style="font-size: 12px !important;">
+                                            <div class="x_panel x_panel1 scroller" style="font-size: 12px !important;">
                                                 <div class="x_title">
                                                   <h2><i class="fa fa-shopping-cart"></i> {{ $dep['department_name'] }}</h2>
                                                       <input type="hidden" id="generalSetPtoPorcentage" value="{{ $generalSet[0]['porcentage'] }}">
@@ -200,8 +202,8 @@
                             </form>
                           <div class="centrado" style="padding-top: 4em; padding-bottom: 4em; display: flex; flex-direction: column; justify-content: center; text-align: center;">
                               <h2 class="th5">DEPARTMENT NET TOTALS:</h2>
-                            <div id="departmentNetTotal" class="col-6 align-self-center">
-                              <table border="1" style="width: 100%; box-shadow: 2px 2px 6px black;">
+                            <div id="departmentNetTotal" class="col-11	col-sm-10	col-md-9 col-lg-8 align-self-center">
+                              <table  class="tesp">
                                 @php($total_net_wage = 0)
                                 @php($total_gross_wage = 0)
                                 @php($total_taxes = 0)

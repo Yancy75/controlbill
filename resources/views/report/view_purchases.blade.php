@@ -17,7 +17,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"></div>
                     <div class="panel-body">
-                        <div class="centar_horizontal"><h3 class="th3"> Purchases</h3></div>
+                        <div class="centar_horizontal"><h3 class="th3"><span class="th3ex"> Purchases</span></h3></div>
                             <div class="x_panel">
                                 <div class="x_title">
                                     <h2><i class="fa fa-shopping-cart"></i> Purchase <small>table</small></h2>

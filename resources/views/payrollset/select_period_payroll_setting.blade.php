@@ -22,14 +22,20 @@
 @endsection
 
 @section('content')
+<style>
+.th3{padding-top: 1.5em;}
+.th3ex{line-height: 3rem;}
+.x_panel{max-width: 730px;}
+.panel-body {padding-bottom: 0px;}
+</style>
     <div class="">
       <div class="clearfix"></div>
       <div class="row">
         <div class="col-md-11 col-md-offset-2">
           <div class="panel panel-default">
               <div class="panel-body">
-                  <div class="centar_horizontal"><h3 class="th3">Select period payroll from {{ $supermarket['name'] }}</h3></div>
-                 <div class="col-sm-6 offset-md-3">
+                 <div class="centar_horizontal"><h3 class="th3"><span class="th3ex">Select period payroll from {{ $supermarket['name'] }}</span></h3></div>
+                 <div class="row" style="justify-content:center; padding-right: 2em; padding-left: 2em;">
                    <div class="x_panel">
                       <div class="x_title">
                         <h2><i class="fa fa-calendar"></i> Period</h2>
@@ -66,44 +72,45 @@
                     @endif
                 </div>
            </div>
+             <div class="panel panel-default">
+                   <div class="panel-body">
+                       <div class="row" style="justify-content:center; padding-right: 2em; padding-left: 2em;">
+                           <div class="x_panel">
+                               <div class="x_title">
+                                   <h2><i class="fa fa-calendar"></i> Last 10 period payroll from {{ $supermarket['name'] }}</h2>
+                                   <ul class="nav navbar-right panel_toolbox"><li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li></ul>
+                                   <div class="clearfix"></div>
+                               </div>
+                               <div class="x_content selecblo">
+                                   <br>
+                                   @if($payroll->isNotEmpty())
+                                       <ul>
+                                           @foreach($payroll as $p)
+                                               <li><a href="javascript:void(0);" onclick="buscarPeriodoByClick('{{ $p->period_starting }}');"><i class="fa fa-calendar"></i> {{ $p->period_starting }}</a></li>
+                                           @endforeach
+                                       </ul>
+                                   @endif
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div>
+                       @if ($errors->any())
+                           <div class="alert alert-danger">
+                               <ul>
+                                   @foreach ($errors->all() as $error)
+                                       <li> {{ $error }}</li>
+                                   @endforeach
+                               </ul>
+                           </div>
+                       @endif
+                   </div>
+               </div>
+
+
         </div>
 
-          <div class="col-md-11 col-md-offset-2">
-              <div class="panel panel-default">
-                  <div class="panel-body">
-                      <div class="col-sm-6 offset-md-3">
-                          <div class="x_panel">
-                              <div class="x_title">
-                                  <h2><i class="fa fa-calendar"></i> Last 10 period payroll from {{ $supermarket['name'] }}</h2>
-                                  <ul class="nav navbar-right panel_toolbox"><li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li></ul>
-                                  <div class="clearfix"></div>
-                              </div>
-                              <div class="x_content selecblo">
-                                  <br>
-                                  @if($payroll->isNotEmpty())
-                                      <ul>
-                                          @foreach($payroll as $p)
-                                              <li><a href="javascript:void(0);" onclick="buscarPeriodoByClick('{{ $p->period_starting }}');"><i class="fa fa-calendar"></i> {{ $p->period_starting }}</a></li>
-                                          @endforeach
-                                      </ul>
-                                  @endif
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div>
-                      @if ($errors->any())
-                          <div class="alert alert-danger">
-                              <ul>
-                                  @foreach ($errors->all() as $error)
-                                      <li> {{ $error }}</li>
-                                  @endforeach
-                              </ul>
-                          </div>
-                      @endif
-                  </div>
-              </div>
-          </div>
+
 
       </div>
     </div>

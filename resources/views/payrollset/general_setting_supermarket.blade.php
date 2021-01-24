@@ -8,18 +8,20 @@
 <style>
 .right{background: white;}
 .form-control{padding-right: 2.5em;}
+.th3{padding-top: 1.5em;}
+.th3ex{line-height: 3rem;}
+.x_panel{max-width: 730px;}
 </style>
     <div class="">
         <div class="clearfix"></div>
         <div class="row">
             <div class="col-md-11 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"></div>
-
+                    
                     <div class="panel-body">
-                        <div class="centar_horizontal"><h3 class="th3">General setting supermarket {{$supermarket['name']}}</h3>  </div>
-                        <div class="row">
-                          <div class="col-sm-8 offset-md-2">
+                        <div class="centar_horizontal"><h3 class="th3"><span class="th3ex">General setting supermarket {{$supermarket['name']}}</span></h3></div>
+                        <div class="row" style="justify-content: center;">
+                          <div class="col-8" style="display: flex; justify-content: center;">
                            <div class="x_panel">
                              <div class="x_title">
                                <h2><i class="fa fa-shopping-cart"></i> General Supermarket</h2>
@@ -32,8 +34,8 @@
                                 @csrf
                                 <input type="hidden" id="inputId" name="inputId" value="<?php if(!empty($info)){echo $info[0]['id'];} else{echo '0';} ?>">
                                 <div class="form-group row">
-                                    <label  class="control-label col-md-2 col-sm-2" for="inputRegularHours">Regular Hours:</label>
-                                      <div class="col-md-10 col-sm-10 ">
+                                    <label  class="control-label col-md-3 col-sm-12" for="inputRegularHours">Regular Hours:</label>
+                                      <div class="col-md-9 col-sm-12 ">
                                     <input type="number" class="form-control" required id="inputRegularHours" name="inputRegularHours" value="@php
                                         if(!empty($info))
                                         {
@@ -46,8 +48,8 @@
 
 
                                 <div class="form-group row">
-                                    <label class="control-label col-md-2 col-sm-2" for="inputPTO">PTO:</label>
-                                        <div class="col-md-10 col-sm-10 ">
+                                    <label class="control-label col-md-3 col-sm-12" for="inputPTO">PTO:</label>
+                                        <div class="col-md-9 col-sm-12 ">
                                     <input type="number" class="form-control" id="inputPTO" name="inputPTO" value="@php
                                         if(!empty($info))
                                         {
@@ -58,8 +60,8 @@
                                 </div>
                               </div>
                                   <div class="form-group row">
-                                    <label class="control-label col-md-2 col-sm-2" for="inputPOverHour">Porcentage over hours:</label>
-                                       <div class="col-md-10 col-sm-10 ">
+                                    <label class="control-label col-md-3 col-sm-12" for="inputPOverHour">Porcentage over hours:</label>
+                                       <div class="col-md-9 col-sm-12 ">
                                     <input type="number" class="form-control" id="inputPOverHour" name="inputPOverHour" value="@php
                                         if(!empty($info))
                                         {

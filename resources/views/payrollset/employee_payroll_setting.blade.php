@@ -3,6 +3,8 @@
 @section('style')
     <style>
     .form-control-plaintext{padding-top: 1px; padding-left: 18px; font-weight: 700; text-decoration: underline;}
+    .right{background: white;}
+    .form-control{padding-right: 2.5em;}
     </style>
 @endsection
 
@@ -14,12 +16,12 @@
                 <div class="panel panel-default">
                    <div class="panel-body">
                         <div class="centar_horizontal">
-                            <h3 class="th3">Payroll setting {{$employee['name']}} {{$employee['last_name']}}</h3>
+                            <h3 class="th3"><span class="th3ex">Payroll setting {{$employee['name']}} {{$employee['last_name']}}</span></h3>
                             <div class="row">
                                 <div class="col-sm-10 offset-md-2">
                                  <div class="x_panel">
                                    <div class="x_title">
-                                     <h2><i class="fa fa-money"></i> Payroll<small> Employee</small></h2>
+                                     <h2><i class="fa fa-money"></i> Payroll Employee</h2>
                                          <ul class="nav navbar-right panel_toolbox"><li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li></ul>
                                      <div class="clearfix"></div>
                                    </div>
@@ -35,7 +37,7 @@
                                 <div class="form-group row">
                                     <label class="control-label col-md-2 col-sm-2" for="inputPayHours">Hourly Rate$:</label>
                                     <div class="col-md-10 col-sm-10 ">
-                                    <input type="text" class="form-control" id="inputPayHours" name="inputPayHours" value="@php
+                                    <input type="number" class="form-control" id="inputPayHours" name="inputPayHours" value="@php
                                         if(!empty($info)){echo $info[0]['pay_hour'];} @endphp"
                                         @if($view_modify == 'v')
                                            disabled

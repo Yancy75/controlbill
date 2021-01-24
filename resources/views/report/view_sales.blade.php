@@ -17,12 +17,12 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"></div>
                     <div class="panel-body">
-                        <div class="centar_horizontal"><h3 class="th3"> Sales</h3></div>
-                        <div class="x_panel">
+                        <div class="centar_horizontal"><h3 class="th3"><span class="th3ex"> Sales </span></h3></div>
+                        <div class="x_panel x_panel1 scroller">
                             <div class="x_title">
                                 <h2><i class="fa fa-shopping-cart"></i> Sales <small>table</small></h2>
                                 <div class="nav navbar-right" style="width: auto; justify-content: flex-end;">
-                                    <a href="{{ route('add_sale', ['id' => $id_supermarket]) }}" class="btn btn-primary by"><i class="fa fa-save"></i> Add Purchase</a>
+                                    <a href="{{ route('add_sale', ['id' => $id_supermarket]) }}" class="btn btn-primary by by1"><i class="fa fa-save"></i> Add Purchase</a>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -48,7 +48,7 @@
                                                     <td>{{ $inf['date_f'] }}</td>
                                                     <td>{{ $inf['amount'] }}</td>
                                                     <td>{{ $inf['status'] }}</td>
-                                                    <td><a href="{{ route("modify_sale", ["id_sale" => $inf['id'], "id_supermarket" => $inf['supermarket_id'] ]) }}" class="btn btn-primary by"><i class="fa fa-edit"></i> Modify</a></td>
+                                                    <td><a href="{{ route("modify_sale", ["id_sale" => $inf['id'], "id_supermarket" => $inf['supermarket_id'] ]) }}" class="btn btn-primary by by1"><i class="fa fa-edit"></i> Modify</a></td>
                                             @endforeach
                                             </tbody>
                                         </table>
@@ -85,4 +85,3 @@
         $(document).ready(function() { $('#sales_list_id').DataTable();} );
     </script>
 @endpush
-

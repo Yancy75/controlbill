@@ -401,7 +401,7 @@ body{overflow-x: hidden;}
   background: rgba(0,0,0,0.1);
   padding-right: 3em;
   border-radius: 5px 5px 5px;
-  box-shadow: -3px -1px 5px black inset;
+  /*box-shadow: -3px -1px 5px black inset;*/
   cursor: pointer;
   margin-left: 1em;
   padding-left: 1.1em;
@@ -427,7 +427,17 @@ body{overflow-x: hidden;}
     }
  /* fin de scroll firefox */
  /*fin de scroll horizontal*/
+ /* Chrome, Safari, Edge, Opera numero */
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
 
+ /* Firefox numero */
+ input[type=number] {
+   -moz-appearance: textfield;
+ }
 /* mas pequeños telefonos */
 @media only screen and (max-width: 500px) {
     .goldenlog1{ height:30px;}

@@ -20,20 +20,21 @@
                     <div class="panel-body">
                         <div class="centar_horizontal">
                             <input type="hidden" id="supermarket_id_id" value="{{ $supermarket['id'] }}">
-                            <h3  class="th3">Employee List of {{ $supermarket['name'] }}</h3>
+                            <h3  class="th3"><span class="th3ex">Employee List of {{ $supermarket['name'] }}</span></h3>
                         </div>
                         @if(empty($info))
                             <div class="centar_horizontal">
                                 <h4>There is no employee registed</h4>
-                                <a href="{{ route('add_employee', ['id_supermarket' => $supermarket['id']]) }}" class="btn btn-success by"><i class="fa fa-save"></i> Add Employee</a>
+                                <a href="{{ route('add_employee', ['id_supermarket' => $supermarket['id']]) }}" class="btn btn-success by by1"><i class="fa fa-save"></i> Add Employee</a>
                             </div>
                         @else
-                              <div class="x_panel">
+                              <div class="x_panel x_panel1 scroller">
                                 <div class="x_title">
-                               <h2><i class="fa fa-shopping-cart"></i> Supermarket <small>table</small></h2>
+                               <h2><i class="fa fa-shopping-cart"></i> Supermarket table</h2>
                                   <div class="nav navbar-right" style="width: auto; justify-content: flex-end;">
-                                      <div class="width_50_porcent">
-                                          <select class="form-control form-control-sm width_30_porcent" id="view_by_status_id">
+                                      <a href="{{ route('add_employee', ['id_supermarket' => $supermarket['id']]) }}" class="btn btn-success by by1"><i class="fa fa-save"></i> Add Employee</a>
+                                      <div style="padding-top: 4px; padding-left: 10px;">
+                                          <select class="form-control form-control-sm" id="view_by_status_id" style="border-radius: 5px; box-shadow: 2px 2px 4px black; min-width: 100px;">
                                               @if($view == 'a')
                                                   <option value="a">Active</option>
                                                   <option value="al">All</option>
@@ -49,7 +50,6 @@
                                               @endif
                                           </select>
                                       </div>
-                                      <a href="{{ route('add_employee', ['id_supermarket' => $supermarket['id']]) }}" class="btn btn-success by"><i class="fa fa-save"></i> Add Employee</a>
                                     </div>
                                    <div class="clearfix"></div>
                                   </div>
@@ -91,8 +91,8 @@
                                                 @endif
 
                                             </td>
-                                            <td><a href="{{ route('modify_employee', ['id' => $inf['emplid'], 'view_modify' => 'v']) }}" class="btn btn-sm btn-primary by" style="min-width: 30px !important;"><i class="fa fa-eye"></i></a></td>
-                                            <td><a href="{{ route('modify_employee', ['id' => $inf['emplid'], 'view_modify' => 'm']) }}" class="btn btn-sm btn-primary by" style="min-width: 30px !important;"><i class="fa fa-edit"></i></a></td>
+                                            <td><a href="{{ route('modify_employee', ['id' => $inf['emplid'], 'view_modify' => 'v']) }}" class="btn btn-sm btn-primary by by1" style="min-width: 30px !important;"><i class="fa fa-eye"></i></a></td>
+                                            <td><a href="{{ route('modify_employee', ['id' => $inf['emplid'], 'view_modify' => 'm']) }}" class="btn btn-sm btn-primary by by1" style="min-width: 30px !important;"><i class="fa fa-edit"></i></a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>

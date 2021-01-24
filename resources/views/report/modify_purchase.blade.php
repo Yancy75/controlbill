@@ -5,6 +5,10 @@
 @endsection
 
 @section('content')
+<style>
+.right{background: white;}
+.form-control{padding-right: 2.5em;}
+</style>
     <div class="">
         <div class="clearfix"></div>
         <div class="row">
@@ -13,12 +17,12 @@
                     <div class="panel-heading"></div>
 
                     <div class="panel-body">
-                        <div class="centar_horizontal"><h3 class="th3">{{$supermarket['name']}} - Modify Purchase</h3>  </div>
+                        <div class="centar_horizontal"><h3 class="th3"><span class="th3ex">{{$supermarket['name']}} - Modify Purchase</span></h3></div>
                         <div class="row">
                             <div class="col-sm-8 offset-md-2">
                                 <div class="x_panel">
                                     <div class="x_title">
-                                        <h2><i class="fa fa-shopping-cart"></i> Purchase <small> Supermarket</small></h2>
+                                        <h2><i class="fa fa-shopping-cart"></i> Purchase Supermarket</h2>
                                         <ul class="nav navbar-right panel_toolbox"><li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li></ul>
                                         <div class="clearfix"></div>
                                     </div>
@@ -32,7 +36,6 @@
                                                 <label  class="control-label col-md-2 col-sm-2" for="inputDate">Date:</label>
                                                 <div class="col-md-10 col-sm-10 ">
                                                     <input type="text" class="form-control" required id="inputDate" name="inputDate" value="{{$info['date_show']}}" autocomplete="off">
-                                                    <span class="fa fa-clock-o form-control-feedback right" aria-hidden="true"></span>
                                                 </div>
                                             </div>
 

@@ -10,6 +10,10 @@
 @endsection
 
 @section('content')
+<style>
+.right{background: white;}
+.form-control{padding-right: 2.5em;}
+</style>
     <div class="">
         <div class="clearfix"></div>
         <div class="row" style="justify-content: center;">
@@ -17,7 +21,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"></div>
                     <div class="panel-body">
-                        <div class="centar_horizontal"><h3 class="th3"> Expenses</h3></div>
+                        <div class="centar_horizontal"><h3 class="th3"><span class="th3ex"> Expenses</span></h3></div>
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2><i class="fa fa-shopping-cart"></i> Expenses <small>table</small></h2>
@@ -85,5 +89,3 @@
         $(document).ready(function() { $('#sales_list_id').DataTable();} );
     </script>
 @endpush
-
-
