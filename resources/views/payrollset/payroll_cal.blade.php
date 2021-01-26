@@ -18,7 +18,7 @@
                     <div class="panel-body">
                         <div>
                             <div class="centar_horizontal">
-                                <h2 class="th2">{{ $supermarket['name'] }} supermarket</h2>
+                                <h2 class="th2"><span class="th3ex">{{ $supermarket['name'] }} supermarket</span></h2>
                                 <h5 class="th5">{{ $supermarket['address'] }}</h5>
                                 <h5 class="th5"><i class="fa fa-list-alt"></i> PAYROLL REPORT</h5>
                             </div>
@@ -44,7 +44,7 @@
                                               <div class="clearfix"></div>
                                             </div>
                                                <div class="x_content">
-                                              <div class="card-body row-horizon" style="font-size: 13px !important;">
+                                              <div class="card-body row-horizon x_panel1 scroller" style="font-size: 13px !important;">
                                                 <table  class="table-cebra">
                                                     <thead>
                                                         <tr>
@@ -112,7 +112,7 @@
                                                                disabled
                                                             @endif
                                                                 /></td>
-                                                            <td><input type="number" id="checkNetPay_{{ $c }}" value="0" onkeyup="calcularTaxes({{ $c }}); calcularNetWage({{ $c }});"
+                                                            <td><input type="number" class="mayo" id="checkNetPay_{{ $c }}" value="0" onkeyup="calcularTaxes({{ $c }}); calcularNetWage({{ $c }});"
                                                             @if($empde['on_book'] == 'none')
                                                                 disabled
                                                             @endif
@@ -164,6 +164,14 @@
                     // console.log(c[1]);
                 }
             });
+            /*validador corrector*/
+            $(".mayo").keyup(function(){
+                var valor = parseInt($(this).val(), 10);;
+                var  a =$(this).attr('id').split('_');
+              if(parseInt($("#checkGrossPay_"+a[1]).val(), 10) < valor){$(this).val(valor.toString().slice(0,-1)); calcularTaxes(a[1]); calcularNetWage(a[1]);}
+                 });
+            /* fin validador corrector */
+
         });
     </script>
 @endpush

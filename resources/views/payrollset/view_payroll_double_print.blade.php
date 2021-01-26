@@ -4,40 +4,44 @@
     <link href="{{ asset('css/bootstrap/css/bootstrap-horizon.css') }}" rel="stylesheet">
 </head>
 <style>
- @page {  margin-top: 150px;  margin-bottom: 80px;  margin-right: 50px;  margin-left: 50px; }
- #header { position: fixed; top: -150px; right: 0px; height: 100px; border-bottom: 2px solid black; text-align: right; font-weight: bold; text-transform: uppercase; padding-top: 5px;}
- #footer { position: fixed; left: 0px; bottom: -80px; right: 0px; height: 60px; text-align: right; padding-right: 20px; border-top: 2px solid black;}
- #footer .page:after { content: counter(page); }
+ @page {  margin-top: 150px;  margin-bottom: 20px;  margin-right: 50px;  margin-left: 50px; }
+ #header { position: fixed; top: -150px; right: 0px; height: 40px; border-bottom: 2px solid black; text-align: right; font-weight: bold; text-transform: uppercase; padding-top: 5px;}
+ /*#footer { position: fixed; left: 0px; bottom: -80px; right: 0px; height: 50px; text-align: right; padding-right: 20px; border-top: 2px solid black;}
+ #footer .page:after { content: counter(page); }*/
  .titulo2{font-size: 35px !important; font-family:sans-serif; color:#ff711e;}
  .nombre{ font-size: 2.5em;
     font-family: sans-serif;
     font-weight: 800;
     text-decoration: underline;
     text-decoration-color: green;}
- .titu{font-family: sans-serif;}
+ .titu{font-family: sans-serif; font-size: 10px !important;}
+ .titu1{font-family: sans-serif; font-size: 14px !important;}
  .cabe{border-bottom: 2px solid black;}
  .obt{border: 1px solid #dee2e6; border-collapse: collapse !important; padding: 0.2em;}
  .colo{background-color:#ebf1de !important;}
- .gru{font-weight: 800;}
+ .gru{font-weight: 800; font-size: 11px !important;}
+ .espacio{width: 100%; height: 200px;}
+ .odo{padding-top: 2px !important; padding-bottom: 1px !important;}
 </style>
 
 <body>
   <div id="header"><?php  /* $image = 'images/logo.png'; $imageData = base64_encode(file_get_contents($image)); $src = 'data:'.mime_content_type($image).';base64,'.$imageData;  echo '<img src="',$src,'" width="325" height="90" style="float:left; padding-right: 20px;">';*/ ?>
-       <h1 class="titulo2"><strong>{{ $supermarket->name }}</strong></h1></div>
-  <div id="footer"><p class="page">Pag </p></div>
+       <h6><strong>{{ $supermarket->name }}</strong></h6></div>
+  <!--<div id="footer"> Employee Pay Stub Print/View Report</div>-->
     <div class="container">
       <div class="row">
         <?php $ba=false ?>
           @foreach($payroll_info as $dep)
                 @foreach($dep as $empde)
                 <?php if($ba){ ?><div style="page-break-after:always;"></div><?php }else{ $ba=true;} ?>
+                    <div class="espacio"></div>
                 <div class="clear"></div>
                   <div style="width:100%;">
                       <div style="padding: 0;">
                               <table class="table" border="0" style="width: 100%;">
                                   <tbody>
                                     <tr>
-                                      <td colspan="2" class="tbro1 titu nombre">{{ $empde['name'] }}</td>
+                                      <td colspan="2" class="tbro1 titu1 nombre"><h4>{{ $empde['name'] }}</h4></td>
                                       <td style="text-align: right;">
                                         <ul style="list-style:none">
                                           <li>Week Starting: {{ $date_begin }}</li>
@@ -46,7 +50,7 @@
                                       </td>
                                     </tr>
                                   <tr>
-                                    <td colspan="2" class="tbro1 titu cabe"><h4>PAYROLL  BREAKDOWN:</h4>  </td>
+                                    <td colspan="2" class="tbro1 titu1 cabe odo">PAYROLL  BREAKDOWN:  </td>
                                     <td rowspan="7">
                                       <div class="float-right" style="font-size: 12px !important;">
                                           @if($empde["salary_type"] == "salary")
@@ -99,7 +103,7 @@
                                       <td class="titu colo obt">NET PAY:</td><td class="obt gru">$&nbsp;{{ number_format($empde['net_pay'],2) }}</td>
                                         </tr>
                                         <tr>
-                                      <td colspan="2" class="tbro1 titu cabe"><h4>PAYMENT  BREAKDOWN:</h4></td>
+                                      <td colspan="2" class="tbro1 titu1 cabe odo">PAYMENT  BREAKDOWN:</td>
                                         </tr>
                                         <tr>
                                       <td class="titu colo obt">DIRECT DEPOSIT:</td><td class="obt gru">$&nbsp;{{ number_format($empde['direct_deposit']) }}</td>
@@ -134,7 +138,7 @@ $dompdf->set_paper("A4", "landscape");
 $dompdf->load_html(ob_get_clean());
 $dompdf->render();
 $pdf = $dompdf->output();
-$filename = "ejemplo";
+$filename = $empde['name'].' '.date("Ymd");
 file_put_contents($filename, $pdf);
 $dompdf->stream($filename);
 ?>

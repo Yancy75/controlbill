@@ -28,7 +28,7 @@
             <div class="col-md-11 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="centar_horizontal"><h3 class="th3">Select employee to add to the payroll from {{ $supermarket['name'] }}</h3></div>
+                        <div class="centar_horizontal"><h3 class="th3"><span class="th3ex">Select employee to add to the payroll from {{ $supermarket['name'] }}</span></h3></div>
 
                         <div class="col-sm-6 offset-md-3">
                             <div class="x_panel">

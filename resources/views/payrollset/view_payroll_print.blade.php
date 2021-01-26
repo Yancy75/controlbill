@@ -52,10 +52,10 @@
                                                     <table class="table " style="width: 100%;">
                                                         <thead class="tbro">
                                                         <tr>
-                                                          <td colspan="19" class="tbro1">  {{ $key }}</td>
+                                                          <td colspan="18" class="tbro1">  {{ $key }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <th class="ocultar">Control</th>
+                                                            <th style="display:none;">Control</th>
                                                             <th  >Employee Name</th>
                                                             <th  >Type of Salary</th>
                                                             <th  >Total of Work Hours</th>
@@ -81,7 +81,7 @@
                                                         <?php $b=true; ?>
                                                         @foreach($dep as $empde)
                                                         <?php if($b==true){ ?><tr class="odd"><?php $b=false; }else{ $b=true; ?><tr><?php } ?>
-                                                                <td class="h td1">{{ $empde['control'] }}</td>
+                                                                <td class="h td1" style="display:none;">{{ $empde['control'] }}</td>
                                                                 <td class="td1">{{ $empde['name'] }}</td>
                                                                 <td class="td1">{{ ucwords($empde['salary_type']) }}</td>
                                                                 <td class="h td1">{{ $empde['working_hours'] }}</td>
